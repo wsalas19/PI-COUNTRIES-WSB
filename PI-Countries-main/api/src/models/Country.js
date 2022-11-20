@@ -9,12 +9,13 @@ module.exports = (sequelize) => {
 			id: {
 				type: DataTypes.STRING(3),
 				allowNull: false,
+				primaryKey: true,
 			},
 			name: {
 				type: DataTypes.STRING,
 				allowNull: false,
 			},
-			flag_image: {
+			flag: {
 				type: DataTypes.STRING,
 				allowNull: false,
 			},
