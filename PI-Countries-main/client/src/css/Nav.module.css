@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Prompt:wght@500&display=swap");
+
+.bar {
+	background-color: #6246ea;
+	display: flex;
+	height: 75px;
+	width: 100%;
+}
+.left {
+	display: flex;
+	width: 50%;
+	align-items: center;
+	justify-content: flex-start;
+	padding-left: 10px;
+}
+.right {
+	display: flex;
+	width: 50%;
+	align-items: center;
+	justify-content: flex-end;
+	padding-right: 20px;
+}
+
+.title {
+	font-family: "Prompt", sans-serif;
+	color: aliceblue;
+	padding: 6px;
+}
+.cloud {
+	width: 58px;
+	margin-right: 7px;
+	filter: invert(89%) sepia(5%) saturate(1025%) hue-rotate(201deg)
+		brightness(96%) contrast(89%);
+}
+.links {
+	padding: 10px;
+	color: aliceblue;
+	text-decoration: none;
+}
+.links:hover {
+	cursor: pointer;
+	color: #266dd3;
+}
