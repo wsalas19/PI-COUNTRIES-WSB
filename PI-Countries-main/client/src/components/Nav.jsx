@@ -7,7 +7,9 @@ function Nav() {
 		<div className={s.bar}>
 			<div className={s.left}>
 				<img className={s.cloud} src={logo} alt="globe" />
-				<h1 className={s.title}>Country Finder</h1>
+				<NavLink to="/home">
+					<h1 className={s.title}>Country Finder</h1>
+				</NavLink>
 			</div>
 			<div className={s.right}>
 				<NavLink className={s.links} to="/">

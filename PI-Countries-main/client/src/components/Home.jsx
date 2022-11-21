@@ -1,6 +1,7 @@
 import React from "react";
 import Nav from "./Nav";
 import Footer from "./Footer";
+import Filter from "./Filter";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -10,6 +11,7 @@ import {
 	orderByPop,
 	filterByActivity,
 	getActivities,
+	getCountriesByName,
 } from "../redux/actions";
 import buffer from "../assets/buffer.gif";
 import s from "../css/Home.module.css";
@@ -41,20 +43,53 @@ function Home() {
 		dispatch(getActivities());
 	}, [dispatch]);
 
+	const handleSearch = (e) => {
+		dispatch(getCountriesByName(e.target.value));
+	};
+	const [city, setCity] = useState("");
+
+	function handleChange(event) {
+		setCity(event.target.value);
+	}
+	function searchClick() {
+		if (city === "") {
+			console.log("enter a city");
+		}
+		dispatch(getCountriesByName(city));
+		setCity("");
+	}
+	const handleKeyDown = (event) => {
+		if (event.key === "Enter") {
+			if (city === "") {
+				console.log("enter a city");
+			}
+			searchClick(city);
+			setCity("");
+			event.target.value = "";
+		}
+	};
+
 	return (
 		<div>
 			<Nav />
+
+			<Filter
+				onSearch={handleSearch}
+				handleChange={handleChange}
+				handleKeyDown={handleKeyDown}
+				searchClick={searchClick}
+			/>
 
 			<div className={s.cards}>
 				{currentCountries.length ? (
 					currentCountries.map((e) => {
 						return (
-							<div>
+							<div key={e.id}>
 								<Card
+									key={e.id}
 									flag={e.flag}
 									name={e.name}
 									continent={e.continent}
-									key={e.id}
 									id={e.id}
 								/>
 							</div>

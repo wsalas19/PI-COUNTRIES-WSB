@@ -10,7 +10,8 @@
 	padding: 15px;
 	position: relative;
 	overflow: hidden;
-	margin: 3%;
+	margin: auto;
+	gap: 3%;
 }
 .card:hover {
 	box-shadow: 0 10px 18px 0 rgba(0, 0, 0, 0.2);

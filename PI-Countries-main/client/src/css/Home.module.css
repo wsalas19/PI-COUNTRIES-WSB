@@ -3,6 +3,9 @@
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-template-rows: 1fr 1fr 1fr 1fr;
 	background-image: url("https://img.freepik.com/vector-gratis/diseno-fondo-mapa-mundo_1127-2318.jpg?w=740&t=st=1669059214~exp=1669059814~hmac=024036a7ca2ae2b8e071b9603b88e594a5e256b346e24cb3777b0cf32fb9ea41");
+	row-gap: 5%;
 	background-repeat: no-repeat;
 	background-size: cover;
+	max-height: fit-content;
+	margin: 5% 0 15%;
 }
