@@ -6,7 +6,6 @@ function Nav() {
 	return (
 		<div className={s.bar}>
 			<div className={s.left}>
-				{" "}
 				<img className={s.cloud} src={logo} alt="globe" />
 				<h1 className={s.title}>Country Finder</h1>
 			</div>

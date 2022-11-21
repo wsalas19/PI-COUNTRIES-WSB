@@ -1,0 +1,40 @@
+.footer {
+	background-color: #6246ea;
+	height: 120px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+}
+
+.nav > a {
+	text-decoration: none;
+	color: aliceblue;
+}
+.nav {
+	display: flex;
+	flex-direction: column;
+	align-content: space-around;
+	justify-content: space-evenly;
+	margin-left: 25px;
+	font-size: small;
+	text-decoration: none;
+}
+.socials {
+	display: flex;
+	justify-content: space-evenly;
+	width: 25%;
+	flex-direction: row;
+	margin-right: 25px;
+}
+.img {
+	width: 45px;
+	filter: invert();
+}
+.img:hover {
+	filter: brightness(0) saturate(100%) invert(29%) sepia(88%) saturate(1110%)
+		hue-rotate(193deg) brightness(102%) contrast(92%);
+}
+a {
+	color: rgb(167, 167, 167);
+}
