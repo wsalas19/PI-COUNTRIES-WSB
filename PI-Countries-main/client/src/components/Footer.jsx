@@ -8,7 +8,7 @@ function Footer() {
 	return (
 		<div className={s.footer}>
 			<div className={s.nav}>
-				<NavLink to="/">Home</NavLink>
+				<NavLink to="/home">Home</NavLink>
 				<NavLink to="/about">About</NavLink>
 			</div>
 			<div className={s.socials}>

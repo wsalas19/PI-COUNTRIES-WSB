@@ -32,9 +32,6 @@
 	filter: invert();
 }
 .img:hover {
-	filter: brightness(0) saturate(100%) invert(29%) sepia(88%) saturate(1110%)
-		hue-rotate(193deg) brightness(102%) contrast(92%);
-}
-a {
-	color: rgb(167, 167, 167);
+	filter: invert(45%) sepia(93%) saturate(2753%) hue-rotate(334deg)
+		brightness(114%) contrast(79%);
 }

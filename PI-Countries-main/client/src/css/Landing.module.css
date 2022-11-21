@@ -1,0 +1,27 @@
+.container {
+	display: flex;
+	justify-content: space-between;
+	border-color: red;
+	border: 3px;
+	background-image: url("http://cdn.shopify.com/s/files/1/0303/4896/8074/products/Earth_minimalist_zoom_1200x1200.jpg?v=1662143622");
+	padding: 13.5% 5%;
+}
+.butn {
+	border: none;
+	color: whitesmoke;
+	background-color: #6246ea;
+	height: 60 px;
+	width: 95px;
+	border-radius: 9px;
+	padding: 10px;
+	align-self: center;
+	transition: all 1s;
+	cursor: pointer;
+}
+.butn > a {
+	text-decoration: none;
+	font-size: medium;
+}
+.butn:hover {
+	zoom: 105%;
+}
