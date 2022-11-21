@@ -1,15 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import s from "../css/Card.module.css";
 function Card(props) {
 	const { flag, name, continent, id } = props;
 	return (
-		<div>
-			<img src={flag} alt="flag" />
-			<h2>{name}</h2>
-			<p>{continent}</p>
-			<Link to={`/countries/${id}`}>
-				<button>Ver Más</button>
-			</Link>
+		<div className={s.card}>
+			<img className={s.img} src={flag} alt="flag" />
+			<div className={s.label}></div>
+			<h2 className={s.name}>{name}</h2>
+			<p className={s.tag}>{continent}</p>
+			<button className={s.btn}>
+				<Link to={`/countries/${id}`}> Learn More</Link>
+			</button>
 		</div>
 	);
 }

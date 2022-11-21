@@ -11,6 +11,8 @@ import {
 	filterByActivity,
 	getActivities,
 } from "../redux/actions";
+import buffer from "../assets/buffer.gif";
+import s from "../css/Home.module.css";
 
 import Card from "./Card";
 
@@ -21,7 +23,7 @@ function Home() {
 
 	const [orden, setOrden] = useState("");
 	const [currentPage, setCurrentPage] = useState(1);
-	let [countriesPerPage, setCountriesPerPage] = useState(12);
+	let [countriesPerPage, setCountriesPerPage] = useState(10);
 
 	const indexOfLastCountrie = currentPage * countriesPerPage;
 	const indexOfFirstCountrie = indexOfLastCountrie - countriesPerPage;
@@ -43,7 +45,7 @@ function Home() {
 		<div>
 			<Nav />
 
-			<div>
+			<div className={s.cards}>
 				{currentCountries.length ? (
 					currentCountries.map((e) => {
 						return (
@@ -59,7 +61,7 @@ function Home() {
 						);
 					})
 				) : (
-					<h1>no hay paises</h1>
+					<img src={buffer} alt="buffer" />
 				)}
 			</div>
 

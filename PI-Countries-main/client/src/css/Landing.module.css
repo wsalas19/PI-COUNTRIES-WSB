@@ -1,21 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Prompt:wght@200&display=swap");
 .container {
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
 	border-color: red;
 	border: 3px;
 	background-image: url("http://cdn.shopify.com/s/files/1/0303/4896/8074/products/Earth_minimalist_zoom_1200x1200.jpg?v=1662143622");
-	padding: 13.5% 5%;
+	padding: 10% 4%;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.right > h3 {
+	font-family: "Prompt", sans-serif;
+	font-weight: normal;
+	font-size: larger;
+	width: 300px;
 }
 .butn {
 	border: none;
 	color: whitesmoke;
 	background-color: #6246ea;
 	height: 60 px;
-	width: 95px;
+	width: 300px;
 	border-radius: 9px;
 	padding: 10px;
-	align-self: center;
-	transition: all 1s;
+	transition: 0.2s;
 	cursor: pointer;
 }
 .butn > a {
@@ -23,5 +31,10 @@
 	font-size: medium;
 }
 .butn:hover {
-	zoom: 105%;
+	transform: scale(1.1);
+	box-shadow: 0 10px 18px 0 rgba(0, 0, 0, 0.2);
+}
+::-webkit-scrollbar {
+	width: 0; /* Remove scrollbar space */
+	background: transparent; /* Optional: just make scrollbar invisible */
 }
