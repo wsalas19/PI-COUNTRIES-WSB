@@ -103,7 +103,7 @@ function rootReducer(state = initialState, action) {
 							if (a.name > b.name) {
 								return 1;
 							}
-							if (a.name < b.name) {
+							if (b.name > a.name) {
 								return -1;
 							}
 							return 0;
@@ -112,7 +112,7 @@ function rootReducer(state = initialState, action) {
 							if (a.name > b.name) {
 								return -1;
 							}
-							if (a.name < b.name) {
+							if (b.name > a.name) {
 								return 1;
 							}
 							return 0;
@@ -123,12 +123,12 @@ function rootReducer(state = initialState, action) {
 			};
 		case ORDER_COUNTRIES_POP:
 			const orderPop =
-				action.payload === "+Population"
+				action.payload === "+population"
 					? state.countries.sort((a, b) => {
 							return a.population - b.population;
 					  })
 					: state.countries.sort((a, b) => {
-							return a.population - b.population;
+							return b.population - a.population;
 					  });
 
 			return {

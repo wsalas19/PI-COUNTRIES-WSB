@@ -15,7 +15,7 @@ import {
 } from "../redux/actions";
 import buffer from "../assets/buffer.gif";
 import s from "../css/Home.module.css";
-
+import Pagination from "./Pagination";
 import Card from "./Card";
 
 function Home() {
@@ -69,6 +69,29 @@ function Home() {
 		}
 	};
 
+	const handleSort = (e) => {
+		dispatch(orderByName(e.target.value));
+		setCurrentPage(1);
+		setOrden(`Ordenado ${e.target.value}`);
+	};
+	const handleSortPop = (e) => {
+		dispatch(orderByPop(e.target.value));
+		setCurrentPage(1);
+		setOrden(`Ordenado ${e.target.value}`);
+	};
+
+	function handleFilteredCountrie(e) {
+		dispatch(filterByContinent(e.target.value));
+	}
+
+	function handleFilterByActivity(e) {
+		e.preventDefault();
+		e.target.value === "none"
+			? dispatch(getCountries())
+			: dispatch(filterByActivity(e.target.value));
+		setCurrentPage(1);
+	}
+
 	return (
 		<div>
 			<Nav />
@@ -78,6 +101,11 @@ function Home() {
 				handleChange={handleChange}
 				handleKeyDown={handleKeyDown}
 				searchClick={searchClick}
+				handleFilteredCountrie={handleFilteredCountrie}
+				handleSort={handleSort}
+				handleSortPop={handleSortPop}
+				handleFilterByActivity={handleFilterByActivity}
+				activities={activities}
 			/>
 
 			<div className={s.cards}>
@@ -99,7 +127,11 @@ function Home() {
 					<img src={buffer} alt="buffer" />
 				)}
 			</div>
-
+			<Pagination
+				paginado={paginado}
+				allCountries={allCountries.length}
+				countriesPerPage={countriesPerPage}
+			/>
 			<Footer />
 		</div>
 	);

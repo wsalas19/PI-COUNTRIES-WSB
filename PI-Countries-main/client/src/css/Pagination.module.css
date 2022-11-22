@@ -1,0 +1,19 @@
+.pages {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	gap: 3px;
+}
+.button {
+	background-color: transparent;
+	border: solid rgb(213, 213, 213) 1px;
+	margin: 0 3px;
+	padding: 5px 5px;
+	width: 30px;
+	border-radius: 4px;
+	transition: 0.4s;
+}
+.button:hover {
+	background-color: #6246ea;
+	color: aliceblue;
+}
