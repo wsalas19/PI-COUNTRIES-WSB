@@ -8,6 +8,13 @@
 	padding: 10% 4%;
 	background-repeat: no-repeat;
 	background-size: cover;
+	height: 450px;
+}
+.right {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 .right > h3 {
 	font-family: "Prompt", sans-serif;
@@ -37,4 +44,7 @@
 ::-webkit-scrollbar {
 	width: 0; /* Remove scrollbar space */
 	background: transparent; /* Optional: just make scrollbar invisible */
+}
+.globe {
+	width: 150%;
 }

@@ -25,7 +25,7 @@ function Home() {
 
 	const [orden, setOrden] = useState("");
 	const [currentPage, setCurrentPage] = useState(1);
-	let [countriesPerPage, setCountriesPerPage] = useState(10);
+	let [countriesPerPage] = useState(10);
 
 	const indexOfLastCountrie = currentPage * countriesPerPage;
 	const indexOfFirstCountrie = indexOfLastCountrie - countriesPerPage;
@@ -119,6 +119,9 @@ function Home() {
 									name={e.name}
 									continent={e.continent}
 									id={e.id}
+									capital={e.capital}
+									area={e.area}
+									population={e.population}
 								/>
 							</div>
 						);

@@ -26,11 +26,12 @@ router.post("/", async (req, res) => {
 
 		const findActivity = await Country.findAll({
 			where: {
-				name: countries,
+				id: countries,
 			},
 		});
 
-		createActivity.addCountries(findActivity);
+		let saved = await createActivity.addCountry(countries);
+		console.log(saved);
 		return res.status(200).send(`La actividad ${name} ha sido creada`);
 	} catch (error) {
 		res.status(400).json({ error: "Los datos son incorrectos" });

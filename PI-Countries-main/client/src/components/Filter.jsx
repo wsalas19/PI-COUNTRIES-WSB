@@ -1,3 +1,4 @@
+import s from "../css/Filter.module.css";
 import React from "react";
 function Filter({
 	onSearch,
@@ -11,7 +12,7 @@ function Filter({
 	activities,
 }) {
 	return (
-		<div>
+		<div className={s.filterbar}>
 			<div>
 				<input
 					type="search"
@@ -20,7 +21,7 @@ function Filter({
 				/>
 				<button onClick={(e) => searchClick(e)}>Find</button>
 			</div>
-			<div>
+			<div className={s.filters}>
 				<div>
 					Order by name
 					<select onChange={(e) => handleSort(e)}>
@@ -37,7 +38,7 @@ function Filter({
 						<option value="-population"> + TO -</option>
 					</select>
 				</div>
-				<div>
+				<div className={s.filters2}>
 					Filter by continent
 					<select onChange={(e) => handleFilteredCountrie(e)}>
 						<option value={"All"}>All </option>
