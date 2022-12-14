@@ -24,12 +24,12 @@ router.post("/", async (req, res) => {
 			season,
 		});
 
-		const findActivity = await Country.findAll({
+		/* 	const findActivity = await Country.findAll({
 			where: {
 				id: countries,
 			},
 		});
-
+ */
 		let saved = await createActivity.addCountry(countries);
 		console.log(saved);
 		return res.status(200).send(`La actividad ${name} ha sido creada`);

@@ -23,9 +23,8 @@ function Home() {
 	const allCountries = useSelector((state) => state.countries);
 	const activities = useSelector((state) => state.allActivities);
 
-	const [orden, setOrden] = useState("");
 	const [currentPage, setCurrentPage] = useState(1);
-	let [countriesPerPage] = useState(10);
+	const countriesPerPage = 10;
 
 	const indexOfLastCountrie = currentPage * countriesPerPage;
 	const indexOfFirstCountrie = indexOfLastCountrie - countriesPerPage;
@@ -72,12 +71,10 @@ function Home() {
 	const handleSort = (e) => {
 		dispatch(orderByName(e.target.value));
 		setCurrentPage(1);
-		setOrden(`Ordenado ${e.target.value}`);
 	};
 	const handleSortPop = (e) => {
 		dispatch(orderByPop(e.target.value));
 		setCurrentPage(1);
-		setOrden(`Ordenado ${e.target.value}`);
 	};
 
 	function handleFilteredCountrie(e) {
