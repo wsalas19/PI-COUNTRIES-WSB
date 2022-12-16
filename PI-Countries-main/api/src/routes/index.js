@@ -10,6 +10,10 @@ const router = Router();
 const countries = require("./countries.js");
 const activities = require("./activities.js");
 
+router.get("/", (req, res) => {
+	res.status(200).send("Hello World");
+});
+
 router.use("/countries", countries);
 router.use("/activities", activities);
 
