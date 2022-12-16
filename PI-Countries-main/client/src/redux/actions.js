@@ -13,7 +13,9 @@ import axios from "axios";
 //Getters for country
 export const getCountries = () => async (dispatch) => {
 	try {
-		let info = await axios.get("http://localhost:3001/countries");
+		let info = await axios.get(
+			"https://pi-countries-wsb-production.up.railway.app/countries"
+		);
 		return dispatch({
 			type: GET_COUNTRIES,
 			payload: info.data,
@@ -24,7 +26,9 @@ export const getCountries = () => async (dispatch) => {
 };
 export const getCountryDetail = (id) => async (dispatch) => {
 	try {
-		let detail = await axios.get(`http://localhost:3001/countries/${id}`);
+		let detail = await axios.get(
+			`https://pi-countries-wsb-production.up.railway.app/countries/${id}`
+		);
 		return dispatch({
 			type: GET_COUNTRY_DETAIL,
 			payload: detail.data,
@@ -36,7 +40,7 @@ export const getCountryDetail = (id) => async (dispatch) => {
 export const getCountrySearch = (name) => async (dispatch) => {
 	try {
 		let search = await axios.get(
-			`http://localhost:3001/countries/?name=${
+			`https://pi-countries-wsb-production.up.railway.app/countries/?name=${
 				name.charAt(0).toUpperCase() + name.slice(1)
 			}`
 		);
@@ -57,7 +61,9 @@ export const getCountriesByName = (name) => {
 //Get and post for activity db.
 export const getActivities = () => async (dispatch) => {
 	try {
-		let activities = await axios.get("http://localhost:3001/activities");
+		let activities = await axios.get(
+			"https://pi-countries-wsb-production.up.railway.app/activities"
+		);
 		return dispatch({
 			type: GET_TOURIST_ACTIVITIES,
 			payload: activities.data,
@@ -69,7 +75,7 @@ export const getActivities = () => async (dispatch) => {
 
 export const postActivity = (activityInfo) => async (dispatch) => {
 	const response = await axios.post(
-		"http://localhost:3001/activities",
+		"https://pi-countries-wsb-production.up.railway.app/activities",
 		activityInfo
 	);
 	return response;
