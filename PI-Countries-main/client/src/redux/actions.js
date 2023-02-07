@@ -14,7 +14,7 @@ import axios from "axios";
 export const getCountries = () => async (dispatch) => {
 	try {
 		let info = await axios.get(
-			"https://pi-countries-wsb-production.up.railway.app/countries"
+			"https://countries-api-vqr6.onrender.com/countries"
 		);
 		return dispatch({
 			type: GET_COUNTRIES,
@@ -27,7 +27,7 @@ export const getCountries = () => async (dispatch) => {
 export const getCountryDetail = (id) => async (dispatch) => {
 	try {
 		let detail = await axios.get(
-			`https://pi-countries-wsb-production.up.railway.app/countries/${id}`
+			`https://countries-api-vqr6.onrender.com/countries/${id}`
 		);
 		return dispatch({
 			type: GET_COUNTRY_DETAIL,
@@ -40,7 +40,7 @@ export const getCountryDetail = (id) => async (dispatch) => {
 export const getCountrySearch = (name) => async (dispatch) => {
 	try {
 		let search = await axios.get(
-			`https://pi-countries-wsb-production.up.railway.app/countries/?name=${
+			`https://countries-api-vqr6.onrender.com/countries/?name=${
 				name.charAt(0).toUpperCase() + name.slice(1)
 			}`
 		);
@@ -62,7 +62,7 @@ export const getCountriesByName = (name) => {
 export const getActivities = () => async (dispatch) => {
 	try {
 		let activities = await axios.get(
-			"https://pi-countries-wsb-production.up.railway.app/activities"
+			"https://countries-api-vqr6.onrender.com/activities"
 		);
 		return dispatch({
 			type: GET_TOURIST_ACTIVITIES,
@@ -75,7 +75,7 @@ export const getActivities = () => async (dispatch) => {
 
 export const postActivity = (activityInfo) => async (dispatch) => {
 	const response = await axios.post(
-		"https://pi-countries-wsb-production.up.railway.app/activities",
+		"https://countries-api-vqr6.onrender.com/activities",
 		activityInfo
 	);
 	return response;
