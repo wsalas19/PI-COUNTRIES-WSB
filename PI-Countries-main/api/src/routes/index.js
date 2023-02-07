@@ -11,7 +11,7 @@ const countries = require("./countries.js");
 const activities = require("./activities.js");
 
 router.get("/", (req, res) => {
-	res.status(200).send("Hello World");
+	res.status(200).send("Country Finder Db");
 });
 
 router.use("/countries", countries);
